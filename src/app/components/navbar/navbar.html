@@ -1,0 +1,12 @@
+<nav class="bg-white shadow-sm px-6 py-4 flex justify-between items-center">
+  <div class="flex items-center gap-3">
+    <div class="w-8 h-8 rounded-lg bg-indigo-600"></div>
+    <span class="text-lg font-semibold text-gray-800">Financio</span>
+  </div>
+
+  <div class="flex items-center gap-6">
+    <a routerLink="/dashboard" routerLinkActive="font-bold text-indigo-600" class="text-gray-700 hover:text-indigo-600 transition">Dashboard</a>
+    <a routerLink="/transactions" routerLinkActive="font-bold text-indigo-600" class="text-gray-700 hover:text-indigo-600 transition">Transferencias</a>
+    <button (click)="logout()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm transition">Cerrar sesión</button>
+  </div>
+</nav>

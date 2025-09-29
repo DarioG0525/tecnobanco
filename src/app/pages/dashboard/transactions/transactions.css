@@ -1,0 +1,67 @@
+.transfer-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transfer-container h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+input,
+select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #302DAA;
+  box-shadow: 0 0 4px rgba(48, 45, 170, 0.3);
+}
+
+.error-box {
+  padding: 12px;
+  border-left: 4px solid #F04141;
+  background: #ffe6e6;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #a30000;
+}
+
+button {
+  margin-top: 10px;
+  background: #302DAA;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #242162;
+}

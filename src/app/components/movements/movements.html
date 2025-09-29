@@ -1,0 +1,36 @@
+<div class="bg-white shadow rounded-xl p-6 mt-6">
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="font-semibold text-gray-800">Últimos movimientos</h3>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm text-left">
+      <thead class="text-gray-500 border-b">
+        <tr>
+          <th class="py-2">Fecha</th>
+          <th class="py-2">Descripción</th>
+          <th class="py-2 text-right">Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of movements" class="border-b">
+          <td class="py-3 text-gray-600">{{ m.date }}</td>
+          <td class="py-3 text-gray-700">{{ m.description }}</td>
+          <td class="py-3 text-right"
+              [ngClass]="m.type === 'positive' ? 'text-green-600' : 'text-red-600'">
+            {{ m.amount }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-4">
+    <!-- Botón con navegación -->
+    <button
+      routerLink="/transactions"
+      class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm transition">
+      Transferir dinero
+    </button>
+  </div>
+</div>

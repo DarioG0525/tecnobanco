@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="max-w-lg mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+  <h2 class="text-2xl font-bold mb-6 text-gray-800">Realizar Transferencia</h2>
+
+  <form [formGroup]="transactionForm" (ngSubmit)="confirmarTransferencia()" class="space-y-5">
+
+    <!-- Cuenta Origen -->
+    <div>
+      <label for="cuentaOrigen" class="block text-sm font-medium text-gray-700">Cuenta Origen</label>
+      <select id="cuentaOrigen" formControlName="cuentaOrigen"
+        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <option *ngFor="let cuenta of cuentasOrigen" [ngValue]="cuenta">
+          {{ cuenta.nombre }} - {{ cuenta.saldo | currency:'USD' }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Cuenta Destino -->
+    <div>
+      <label for="cuentaDestino" class="block text-sm font-medium text-gray-700">Cuenta Destino</label>
+      <input id="cuentaDestino" type="text" formControlName="cuentaDestino"
+        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        placeholder="Ingrese número de cuenta">
+    </div>
+
+    <!-- Monto -->
+    <div>
+      <label for="monto" class="block text-sm font-medium text-gray-700">Monto</label>
+      <input id="monto" type="number" formControlName="monto"
+        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        placeholder="$ 0.00">
+    </div>
+
+    <!-- Descripción -->
+    <div>
+      <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripción (opcional)</label>
+      <input id="descripcion" type="text" formControlName="descripcion"
+        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        placeholder="Ej: Pago alquiler">
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="showError" class="p-3 rounded-lg bg-red-100 border-l-4 border-red-500 text-red-700 text-sm">
+      ⚠ Fondos insuficientes. Por favor, asegúrese de tener saldo suficiente para completar la transferencia.
+    </div>
+
+    <!-- Botón -->
+    <button type="submit"
+      class="w-full py-3 px-4 bg-indigo-700 text-white rounded-lg font-medium hover:bg-indigo-800 transition">
+      Confirmar transferencia
+    </button>
+  </form>
+</div>
